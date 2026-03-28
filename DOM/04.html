@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+    function addlanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}` // use to add new element in created element into optimize way
+        document.querySelector('.language')
+        .appendChild(li)
+    }
+    addlanguage("python")
+    addlanguage("typescript")
+
+    function addOptLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName)); // use to add new element in created element into optimize way
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptLanguage('golang')
+
+    // Edit
+    const secondLang = document.querySelector('li:nth-child(2)')
+    // secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli) // use to update or edit element with exiting element
+
+    // Edit
+    const fristLang = document.querySelector('li:first-child')
+    fristLang.outerHTML = '<li>TypeScript</li>' // use to update or edit element with exiting element
+
+    // remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove() // use to remove or delete exiting element
+
+</script>
+
+</html>
